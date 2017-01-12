@@ -33,7 +33,7 @@ def stats():
         for service in services:
             res.append("rancher_service_create_index{name=\"%s/%s\"} %s"
                        % (stack, service, service_create_index(stack, service)))
-    return "\n".join(res)
+    return Response("%s\n" % "\n".join(res), mimetype='text/plain')
 
 if __name__ == "__main__":
     app.run()
