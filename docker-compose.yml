@@ -1,0 +1,9 @@
+version: '2'
+services:
+    webapp:
+        image: vampouille/prometheus_rancher_metadata
+        build: .
+        ports:
+            - "5000:5000"
+        labels:
+            prometheus_port: '5000'
