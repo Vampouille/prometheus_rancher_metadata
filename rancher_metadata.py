@@ -22,7 +22,7 @@ def service_create_index(stack, service):
     return int(curl("http://rancher-metadata/2015-12-19/stacks/%s/services/%s/create_index" % (stack, service)))
 
 
-@app.route("/")
+@app.route("/metrics")
 def stats():
     res = []
     stacks = list_stacks()
