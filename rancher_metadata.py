@@ -19,7 +19,10 @@ def list_services(stack):
 
 
 def service_create_index(stack, service):
-    return int(curl("http://rancher-metadata/2015-12-19/stacks/%s/services/%s/create_index" % (stack, service)))
+    try:
+        return int(curl("http://rancher-metadata/2015-12-19/stacks/%s/services/%s/create_index" % (stack, service)))
+    except ValueError:
+        return 0
 
 
 @app.route("/metrics")
